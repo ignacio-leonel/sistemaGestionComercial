@@ -1,14 +1,10 @@
 const express = require('express');
 const app = express();
-require('dotenv').config(); 
+const productosRoutes = require('./routes/productos.routes');
 
 app.use(express.json());
+app.use('/productos', productosRoutes); // monta las rutas bajo /productos
 
-app.get('/', (req, res) => {
-  res.send('Servidor funcionando correctamente');
-});
-
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en puerto ${PORT}`);
+app.listen(3000, () => {
+  console.log('Servidor corriendo en puerto 3000');
 });

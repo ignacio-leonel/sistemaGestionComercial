@@ -11,9 +11,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Proyecto en desarrollo con stack PERN (PostgreSQL, Express, React, Node.js)",
   "dependencies": {
     "dotenv": "^17.2.0",
     "express": "^5.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignacio-leonel/sistemaGestionComercial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ignacio-leonel/sistemaGestionComercial/issues"
+  },
+  "homepage": "https://github.com/ignacio-leonel/sistemaGestionComercial#readme"
 }
