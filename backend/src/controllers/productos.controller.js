@@ -5,25 +5,21 @@ const productos = [
 
 //Logica para obtener productos y buscar por id, nombre o codigo
 
-const obtenerProductos = (req, res) => {
-  res.send('Listado de productos desde el controller');
-};
-
 const buscarProducto = (req, res) => {
   const { id, nombre, codigo } = req.query;
 
-  let resultados = [];
+  let resultados = productos;
 
   if (id) {
-    resultados = productos.filter(p => p.id.toString().startsWith(id));
-  } else if (nombre) {
-    resultados = productos.filter(p =>
+    resultados = resultados.filter(p => p.id.toString().startsWith(id));
+  }
+  if (nombre) {
+    resultados = resultados.filter(p =>
       p.nombre.toLowerCase().includes(nombre.toLowerCase())
     );
-  } else if (codigo) {
-    resultados = productos.filter(p => p.codigo.startsWith(codigo));
-  } else {
-    return res.status(400).json({ mensaje: 'Faltan parámetros de búsqueda' });
+  }
+  if (codigo) {
+    resultados = resultados.filter(p => p.codigo.startsWith(codigo));
   }
 
   if (resultados.length === 0) {
@@ -32,6 +28,7 @@ const buscarProducto = (req, res) => {
 
   res.json(resultados);
 };
+
 
 //Agregar un producto
 
@@ -52,10 +49,45 @@ const agregarProducto = (req, res) => {
   res.status(201).json({ mensaje: 'Producto agregado', producto: { id, nombre, codigo } });
 };
 
+//editar producto
+const editarProducto = (req, res) => {
+  const id = parseInt(req.params.id);
+  const { nombre, codigo } = req.body;
+
+  const producto = productos.find(p => p.id === id);
+  if (!producto) {
+    return res.status(404).json({ mensaje: 'Producto no encontrado' });
+  }
+
+  if (nombre) producto.nombre = nombre;
+  if (codigo) producto.codigo = codigo;
+
+  res.json({ mensaje: 'Producto actualizado', producto });
+};
+
+//ELIMINAR producto
+const eliminarProducto = (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = productos.findIndex(p => p.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ mensaje: 'Producto no encontrado' });
+  }
+
+  productos.splice(index, 1);
+  res.json({ mensaje: 'Producto eliminado' });
+};
+// Obtener todos los productos
+const obtenerProductos = (req, res) => {
+  res.json(productos);
+};
+
 
 
 module.exports = {
   obtenerProductos,
   buscarProducto,
-  agregarProducto
+  agregarProducto,
+  editarProducto,
+  eliminarProducto
 };
