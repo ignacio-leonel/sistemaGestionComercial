@@ -39,7 +39,7 @@ Crear archivo .env con variables como:
 ```bash
 DATABASE_URL=postgres://usuario:contraseña@localhost:5432/mi_base_de_datos
 ```
-Ejecución
+## Ejecución
 
 Backend
 ```bash
