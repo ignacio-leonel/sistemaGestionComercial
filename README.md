@@ -18,72 +18,80 @@ Sistema de gestión orientado a comercios. Permite que usuarios con roles **Admi
 - PostgreSQL (vX.X)
 
 ### Clonar repositorio
+
 ```bash
 git clone https://github.com/ignacio-leonel/sistemaGestionComercial.git
 cd sistemaGestionComercial
-```bash
+```
 Backend
-bash
+```bash
 Copiar
 Editar
 cd backend/src
 npm install
+```
 Frontend
-bash
+```bash
 Copiar
 Editar
 cd ../../frontend
 npm install
+```
 Configuración del entorno
 Crear archivo .env con variables como:
 
-bash
+```bash
 Copiar
 Editar
 DATABASE_URL=postgres://usuario:contraseña@localhost:5432/mi_base_de_datos
+```
 Ejecución
+
 Backend
-bash
+```bash
 Copiar
 Editar
 cd backend/src
 npm start
+```
 Frontend
-bash
+```bash
 Copiar
 Editar
 cd frontend
 npm start
-Uso
-Acceder a http://localhost:3000 para iniciar sesión.
+```
 
-Si sos Administrador, podés gestionar productos y ventas.
+## Uso
+- Acceder a [http://localhost:3000](http://localhost:3000) para iniciar sesión.
+- Si sos **Administrador**, podés gestionar productos y ventas.
+- Si sos **Cajera**, podés registrar ventas y generar tickets.
 
-Si sos Cajera, podés registrar ventas y generar tickets.
+---
 
-Roles y permisos
-Administrador: acceso completo (productos, ventas, usuarios).
+## Roles y permisos
+- **Administrador**: acceso completo (productos, ventas, usuarios).
+- **Cajera**: acceso limitado para registrar ventas y emitir tickets.
 
-Cajera: acceso limitado para registrar ventas y emitir tickets.
+---
 
-Próximas funcionalidades
-Reportes de ventas (diarios, mensuales).
+## Próximas funcionalidades
+- 📊 Reportes de ventas (diarios, mensuales).
+- 📦 Gestión de inventario con alertas de stock bajo.
+- 🔐 Autenticación y autorización con JWT.
+- 🗂 Historial de ventas y auditoría.
 
-Gestión de inventario con alertas de stock bajo.
+---
 
-Autenticación y autorización con JWT.
+## Contribución
+Las contribuciones son bienvenidas.  
+Podés abrir un **issue** o un **pull request** para sugerir mejoras o nuevas funcionalidades.
 
-Historial de ventas y auditoría.
+---
 
-Contribución
-Las contribuciones son bienvenidas.
-Podés abrir un issue o un pull request para sugerir mejoras o nuevas funcionalidades.
+## Licencia
+Este proyecto está bajo Licencia **MIT** (o la que prefieras).  
+Contactame si querés más detalles.
 
-Licencia
-Este proyecto está bajo Licencia MIT (o la que prefieras). Contáctame si querés detalles.
+---
 
-Autor
-Desarrollado por Ignacio Maldonado (ignacio-leonel).
-
-Copiar
-Editar
