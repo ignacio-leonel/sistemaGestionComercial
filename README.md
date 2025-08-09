@@ -25,15 +25,11 @@ cd sistemaGestionComercial
 ```
 Backend
 ```bash
-Copiar
-Editar
 cd backend/src
 npm install
 ```
 Frontend
 ```bash
-Copiar
-Editar
 cd ../../frontend
 npm install
 ```
@@ -41,23 +37,17 @@ Configuración del entorno
 Crear archivo .env con variables como:
 
 ```bash
-Copiar
-Editar
 DATABASE_URL=postgres://usuario:contraseña@localhost:5432/mi_base_de_datos
 ```
 Ejecución
 
 Backend
 ```bash
-Copiar
-Editar
 cd backend/src
 npm start
 ```
 Frontend
 ```bash
-Copiar
-Editar
 cd frontend
 npm start
 ```
@@ -90,7 +80,7 @@ Podés abrir un **issue** o un **pull request** para sugerir mejoras o nuevas fu
 ---
 
 ## Licencia
-Este proyecto está bajo Licencia **MIT** (o la que prefieras).  
+Este proyecto está bajo Licencia **MIT**  
 Contactame si querés más detalles.
 
 ---
