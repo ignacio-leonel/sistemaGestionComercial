@@ -10,6 +10,58 @@ Sistema de gestión orientado a comercios. Permite que usuarios con roles **Admi
 - Interfaz web moderna con React.
 - API REST construida con Node.js y Express.
 - Persistencia de datos con PostgreSQL.
+- ## Documentación de la API
+
+### Rutas disponibles
+
+| Método | Ruta                      | Descripción                          | Ejemplo de respuesta                    |
+|--------|---------------------------|------------------------------------|----------------------------------------|
+| GET    | `productos`           | Lista todos los productos           | `200 OK` con array JSON de productos   |
+| POST   | `productos`           | Crea un nuevo producto              | `201 Created` con objeto producto      |
+| GET    | `productos/:id`       | Obtiene un producto por ID          | `200 OK` con objeto producto            |
+| PUT    | `productos/:id`       | Actualiza un producto existente     | `200 OK` con objeto producto actualizado|
+| DELETE | `productos/:id`       | Elimina un producto (lógica)        | `204 No Content`                       |
+
+---
+
+### Ejemplo de respuesta exitosa (GET `/productos`)
+
+```json
+[
+  {
+    "id": 1,
+    "nombre": "Producto A",
+    "precio": 100,
+    "stock": 50
+  },
+  {
+    "id": 2,
+    "nombre": "Producto B",
+    "precio": 200,
+    "stock": 30
+  }
+]
+```
+## Errores comunes
+
+| Código HTTP | Error                  | Descripción                                    | Ejemplo de respuesta                          |
+|-------------|------------------------|------------------------------------------------|-----------------------------------------------|
+| 400 Bad Request  | Datos inválidos         | Cuando faltan campos obligatorios o son incorrectos | ```json { "error": "El campo 'nombre' es obligatorio" } ``` |
+| 401 Unauthorized | No autorizado          | Cuando no se provee token válido o no hay permiso  | ```json { "error": "Acceso no autorizado" } ```               |
+| 404 Not Found    | No encontrado           | Cuando el recurso solicitado no existe             | ```json { "error": "Producto no encontrado" } ```            |
+| 500 Internal Server Error | Error interno        | Error inesperado en el servidor                      | ```json { "error": "Error interno, intente más tarde" } ```  |
+
+---
+
+### Ejemplo de error 400 - Datos inválidos
+
+**Request Body:**
+
+```json
+{
+  "precio": -10
+}
+```
 
 ## Instalación
 
