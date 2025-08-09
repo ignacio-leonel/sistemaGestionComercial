@@ -21,6 +21,7 @@ Sistema de gestión orientado a comercios. Permite que usuarios con roles **Admi
 ```bash
 git clone https://github.com/ignacio-leonel/sistemaGestionComercial.git
 cd sistemaGestionComercial
+```bash
 Backend
 bash
 Copiar
